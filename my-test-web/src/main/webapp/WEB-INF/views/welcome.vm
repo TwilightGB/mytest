@@ -1,0 +1,11 @@
+#set($layout = "layout/empty.vm")
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>test系统</title>
+    <link href="#springUrl('')/static/css/welcome.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+</body>
+</html>

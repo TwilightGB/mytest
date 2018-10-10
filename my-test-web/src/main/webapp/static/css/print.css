@@ -1,0 +1,24 @@
+/*打印相关CSS*/
+.printbox{color:#000000;  width:800px; margin:5px auto; /*border:1px solid #accaec; background:#FFFFFF;*/  padding:25px 40px; table-layout:fixed; }
+.printbox .hd{}
+.printbox .hd h2 {text-align:center; margin:0 auto; line-height:1.5em; font-size:30px; font-family:黑体; font-weight:normal; letter-spacing:0.1em; }
+/* 普通文字 */
+.printbox .print_section {margin-top:20px; color:#000; font-family:黑体; font-size:16px; font-weight:normal; text-align:left;}
+.printbox .print_section .print_section_item {color:#000; font-family:黑体; font-size:16px; font-weight:normal; text-align:left;}
+/* 无边框表格 */
+.printbox .print_table .table_detail_info { margin-top:20px; font-family:黑体;}
+.printbox .print_table .table_detail_info .col1 {width:120px;}
+.printbox .print_table .table_detail_info .col2 {width:150px;}
+.printbox .print_table .table_detail_info .col3 {width:300px;}
+.printbox .print_table .table_detail_info .col4 {width:400px;}
+.printbox .print_table .table_detail_info .col5 {width:500px;}
+.printbox .print_table .table_detail_info .col_right {text-align:right;}
+.printbox .print_table .table_detail_info th {color:#000; padding:10px 0 5px; font-size:16px; font-weight:normal; text-align:center;}
+.printbox .print_table .table_detail_info td {color:#000; padding:10px 0 5px; font-size:16px; font-weight:normal; text-align:left;}
+/*有边框表格 */
+.printbox .print_table_list {}
+.printbox .print_table_list .table_list {/*color:#000000;*/ width:100%; font-family:黑体; BORDER-COLLAPSE:collapse; border-spacing:0; }
+.printbox .print_table_list .table_list th {color:#000; height:30px; border:1px solid #000000; font-weight:bold; font-size:14px; text-align:center;}
+.printbox .print_table_list .table_list td {color:#000; padding-left:4px; height:26px; border:1px solid #000000; font-size:14px; text-align:left; /*border-top:1px solid #c7d3e1;border-bottom:1px solid #c7d3e1;*/}
+.printbox .print_table_list .table_list .number {text-align:right;}
+.printbox .print_table_list .table_list .col_center {text-align:center;}

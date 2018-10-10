@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<!--
+		"configuration" must match
+		"(properties?,settings?,typeAliases?,typeHandlers?,objectFactory?,objectWrapperFactory?,plugins?,environments?,mappers?)".
+	-->
+	<properties>
+		<property name="dialect" value="mybatisUtil.Dialect.MySQLDialect"/>
+	</properties>
+
+
+	<settings>
+		<setting name="lazyLoadingEnabled" value="false" />
+		<setting name="defaultStatementTimeout" value="20"/>
+	</settings>
+	<typeAliases>
+		<typeAlias alias="CityToCityDistance" type="com.company.test.po.CityToCityDistance" />
+	</typeAliases>
+
+	<!--<plugins>-->
+		<!--<plugin interceptDiclectStatementHandlerInterceptorptor" />-->
+		<!--<plugin interceptDiclectResultSetHandlerInterceptorptor" />-->
+	<!--</plugins>-->
+	<mappers>
+		<mapper resource="mybatis/mysql/CityToCityDistanceDao.xml"/>
+	</mappers>
+
+</configuration>

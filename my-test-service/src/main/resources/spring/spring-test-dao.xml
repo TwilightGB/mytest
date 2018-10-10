@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+       default-lazy-init="false" default-autowire="byName">
+
+    <bean id="sqlSessionDao" class="mybatisUtil.plugin.SqlSessionDao"
+          depends-on="mainSqlSessionTemplate">
+        <property name="sqlSession" ref="mainSqlSessionTemplate" />
+    </bean>
+
+    <bean id="cityToCityDistanceDao" class="mybatisUtil.plugin.SqlSessionProxyFactoryBean">
+        <property name="targetInterface" value="com.company.test.dao.CityToCityDistanceDao" />
+        <property name="proxy" ref="sqlSessionDao" />
+    </bean>
+
+    <!--<bean id="cityToCityDistanceDao" class="com.company.test.dao.CityToCityDistanceDao">-->
+    <!--</bean>-->
+</beans>

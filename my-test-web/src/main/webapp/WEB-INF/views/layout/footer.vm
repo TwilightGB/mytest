@@ -1,0 +1,19 @@
+
+<script src="#springUrl('/static/assets/js/ace-extra.min.js')"  type="text/javascript"></script>
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="#springUrl('/static/assets/js/html5shiv.js')" type="text/javascript"></script>
+<script src="#springUrl('/static/assets/js/respond.min.js')" type="text/javascript"></script>
+<![endif]-->
+<!-- ace scripts -->
+<script src="#springUrl('/static/assets/js/jquery-ui-1.10.3.full.min.js')" type="text/javascript"></script>
+<script src="#springUrl('/static/assets/js/typeahead-bs2.min.js')" type="text/javascript"></script>
+<script src="#springUrl('/static/assets/js/ace-elements.min.js')" type="text/javascript"></script>
+<script src="#springUrl('/static/assets/js/ace.min.js')" type="text/javascript"></script>
+<script src="#springUrl('/static/assets/js/bootstrap-datetimepicker.min.js')" type="text/javascript"></script>
+<script src="#springUrl('/static/assets/js/bootbox.min.js')" type="text/javascript"></script>
+<script src="#springUrl('/static/js/plugins/jquery.blockUI.js')" type="text/javascript"></script>
+<script src="#springUrl('/static/js/plugins/sweetalert/sweet-alert.js')" type="text/javascript"></script>
+<script src="#springUrl('/static/js/common/common-client.js')" type="text/javascript"></script>
+<script src="#springUrl('/static/js/common/common-ui.js?v=20160909')" type="text/javascript"></script>
+<script src="#springUrl('/static/js/common/utils.js?t=20150128')" type="text/javascript"></script>

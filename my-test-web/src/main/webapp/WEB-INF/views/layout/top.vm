@@ -1,0 +1,22 @@
+#set($layout = "layout/empty.vm")
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>X系统</title>
+<link href="#springUrl('/static/css/erpbase.css')" rel="stylesheet" type="text/css" media="all">
+<script type="text/javascript" src="#springUrl('/static/js/plugins/jquery.min.js')"></script>
+</head>
+<body id="topframe" >
+<DIV id="header">
+  <DIV class=logo><IMG alt="bluedrgon" src="#springUrl('/static/images/logo.png')"></DIV>
+  <div class="msg"> <span class="msg_name">当前用户：$!{erpUser.userCode}</span> <span class="msg_time"> 登录时间：$!{loginTime}</span> <span class="msg_system"><a href="#">系统设置</a></span><span class="msg_help"><a href="#"> 帮助 </a></span> </div>
+  <div class="quit"><a href="#">退出</a></div>
+  <div id="nav">
+    <ul>
+      <li><a href="#"> 报表管理 </a></li><li class="nav_f"></li>
+    </ul>
+  </div>
+</DIV>
+</body>
+</html>

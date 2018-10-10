@@ -1,0 +1,13 @@
+<link href="#springUrl('/static/assets/css/font-awesome.min.css')" rel="stylesheet" type="text/css"/>
+<!--[if IE 7]>
+<link  href="#springUrl('/static/assets/css/font-awesome-ie7.min.css')" rel="stylesheet"/>
+<![endif]-->
+<link href="#springUrl('/static/assets/css/ace.min.css')" rel="stylesheet" type="text/css"/>
+<!--[if lte IE 8]>
+<link  href="#springUrl('/static/assets/css/ace-ie.min.css')" rel="stylesheet"/>
+<![endif]-->
+<link href="#springUrl('/static/assets/css/ace-rtl.min.css')" rel="stylesheet" type="text/css"/>
+<link href="#springUrl('/static/assets/css/ace-skins.min.css')" rel="stylesheet" type="text/css"/>
+<link href="#springUrl('/static/assets/css/bootstrap-datetimepicker.min.css')" rel="stylesheet" media="screen">
+<link href="#springUrl('/static/js/plugins/sweetalert/sweet-alert.css')" rel="stylesheet" media="screen">
+<link href="#springUrl('/static/css/boss.css')" rel="stylesheet" type="text/css"/>

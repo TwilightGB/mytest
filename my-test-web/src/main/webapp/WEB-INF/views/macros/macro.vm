@@ -1,0 +1,201 @@
+#macro (markup $tag $visible $body $attributes)
+#if($visible)
+<${tag}#foreach($entry in $attributes.entrySet()) ${entry.key}="${entry.value}"#end
+#if(!$body) /#end>
+#end
+#if($body)$!bodyContent#if($visible)</${tag}>#end
+#end
+#end
+
+#macro(pageBar $clickFunction $totalRow  $currentPage $totalPage)
+##pageCount
+#if($totalPage > 3)
+	#set($start = $currentPage - 1)
+    #if($start < 1)
+        #set($start = 1)
+    #end
+    #set($end = $start + 2)
+    #if($end > $totalPage)
+        #set($end = $totalPage)
+        #set($start = $end - 2)
+    #end
+#else
+    #set($start = 1)
+    #set($end = $totalPage)
+#end
+    #set($_prePage = $start - 1)
+    #set($_nextPage = $end + 1)
+    #set($prePage = $currentPage - 1)
+    #set($nextPage = $currentPage + 1)
+
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tbody>
+        <tr>
+            <td align="left" width="56"></td>
+            <td width="104" align="center">&nbsp;</td>
+            <td width="819" align="right">
+                <div class="m clearfix">
+                ##页码显示规则
+                #if($totalRow>0)
+                    <div class="pagin fr">
+                        <span class="text">共$!{totalRow}条记录</span>
+                        <span class="text">共$!{totalPage}页</span>
+                        #if($currentPage>1)
+                            <a href="#" onclick="${clickFunction}(1)">首页<b></b></a> 
+							<a href="#" onclick="${clickFunction}(${prePage})">上一页<b></b></a>
+                        #else
+                            <span class="prev-disabled">首页<b></b></span> <span class="prev-disabled">上一页</span>
+                        #end
+                        #if($_prePage>0)
+                            <span class="text">...</span>
+                        #end
+                        #foreach($idx in [$start..$end])
+                            #if($idx==$currentPage)
+                                <a class="current" href="javascript:;">$idx</a>
+                            #else
+                                <a href="#" onclick="${clickFunction}(${idx});">$idx</a>
+                            #end
+                        #end
+                        #if($_nextPage<=$totalPage )
+                            <span class="text">...</span>
+                        #end
+                        #if($currentPage<$totalPage)
+                            <a href="#" onclick="${clickFunction}(${nextPage})">下一页<b></b></a>
+							<a href="#" onclick="${clickFunction}(${totalPage})" class="next">末页</a>
+                        #else
+                            <span class="prev-disabled">下一页<b></b></span> <span class="prev-disabled">末页</span>
+                        #end
+                    </div>
+                #else
+                    <div class="pagin fr"><span class="text">暂无相关记录</span></div>
+                #end
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+#end
+
+##根据运输类型的值显示文本
+#macro (transTypeText $transType)
+    #if($!{transType} == 1)干线
+    #elseif($!{transType} == 2)支线
+    #elseif($!{transType} == 3)短驳
+    #elseif($!{transType} == 4)上门提送
+    #else
+    #end
+#end
+
+##根据运输方式的值显示文本
+#macro(transWayText $transWay)
+    #if($!{transWay} == 1)
+    公路零担
+    #elseif($!{transWay} == 2)
+    公路整车
+    #elseif($!{transWay} == 3)
+    航空
+    #elseif($!{transWay} == 4)
+    铁路
+    #elseif($!{transWay} == 5)
+    快递
+    #elseif($!{transWay} == 6)
+    冷链整车
+    #elseif($!{transWay} == 7)
+    冷链零担
+    #elseif($!{transWay} == 8)
+    公路整车平板
+    #elseif($!{transWay} == 9)
+    公路零担平板
+    #else
+    #end
+#end
+
+##根据委托书状态的值显示文本
+#macro(bookStatusText $status)
+    #if($!{status} == 10)
+    初始
+    #elseif($!{status} == 20)
+    已发货
+    #elseif($!{status} == 30)
+    已发车
+    #elseif($!{status} == 40)
+    已到车
+    #elseif($!{status} == 50)
+    部分签收
+    #elseif($!{status} == 60)
+    已签收
+    #elseif($!{status} == 200)
+    已作废
+    #else
+    #end
+#end
+
+##转运单状态
+#macro(billStatusText $billStatus)
+    #if($!{billStatus} == 1)
+    未绑定委托书
+    #elseif($!{billStatus} == 2)
+    已绑定委托书
+    #elseif($!{billStatus} == 3)
+    运输中
+    #elseif($!{billStatus} == 4)
+    已签收
+    #else
+    #end
+#end
+
+##转运单送达状态
+#macro(relationStatusText $relationStatus)
+    #if($!{relationStatus} == 1)
+    未送达
+    #elseif($!{relationStatus} == 2)
+    已送达
+    #else
+    #end
+#end
+
+#macro(boxCountValue $value)
+$!numberTool.format('#0',$!value)
+#end
+
+#macro(volumeValue $value)
+$!numberTool.format('#0.0000',$!value)
+#end
+
+#macro(weightValue $value)
+$!numberTool.format('#0.000',$!value)
+#end
+
+#macro(temperatureValue $value)
+$!numberTool.format('#0.00',$!value)
+#end
+
+#macro(doubleValue $value)
+$!numberTool.format('#0.00',$!value)
+#end
+
+#macro(integerValue $value)
+$!numberTool.format('#0',$!value)
+#end
+
+#macro(tempTypeText $value)
+    #if($!{value} == 0)
+    普通
+    #elseif($!{value} == 1)
+    冷藏
+    #elseif($!{value} == 2)
+    冷冻
+    #else
+    #end
+#end
+
+#macro(parseSpecialNeedText $specialNeedStr)
+    #if($!specialNeedStr)
+        #foreach($item in $!specialNeedStr.split(","))
+            #set($inner = $!item.split("-"))
+            #if($!inner.size() > 1)
+                $!inner.get(1)
+            #end
+        #end
+    #end
+#end

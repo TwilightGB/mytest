@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.company.test.dao.impl.CityToCityDistanceDaoImpl">
+
+    <resultMap id="BaseResultMap" type="com.company.test.po.CityToCityDistance">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="start_prov_id" jdbcType="INTEGER" property="startProvId"/>
+        <result column="start_prov_name" jdbcType="VARCHAR" property="startProvName"/>
+        <result column="start_city_id" property="startCityId" jdbcType="INTEGER"/>
+        <result column="start_city_name" property="startCityName" jdbcType="VARCHAR"/>
+        <result column="end_prov_id" property="endProvId" jdbcType="INTEGER"/>
+        <result column="end_prov_name" property="endProvName" jdbcType="VARCHAR"/>
+        <result column="end_city_id" property="endCityId" jdbcType="INTEGER"/>
+        <result column="end_city_name" property="endCityName" jdbcType="VARCHAR"/>
+        <result column="line_name" property="lineName" jdbcType="VARCHAR"/>
+        <result column="line_distance" property="lineDistance" jdbcType="VARCHAR"/>
+        <result column="operator_id" property="operatorId" jdbcType="VARCHAR"/>
+        <result column="operator_code" property="operatorCode" jdbcType="VARCHAR"/>
+        <result column="operator_name" property="operatorName" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="yn" property="yn" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="sqlColumns">
+        id,start_prov_id,start_prov_name,start_city_id,start_city_name,end_prov_id,
+        end_prov_name,end_city_id,end_city_name,line_name,line_distance,operator_id,operator_code,operator_name,create_time,update_time,yn
+    </sql>
+
+    <sql id="selectByConditionnWhereSql">
+        <if test="startProvId != null">
+            and start_prov_id = #{startProvId,jdbcType=INTEGER}
+        </if>
+        <if test="startCityId != null">
+            and start_city_id = #{startCityId,jdbcType=INTEGER}
+        </if>
+        <if test="endProvId != null">
+            and end_prov_id = #{endProvId,jdbcType=INTEGER}
+        </if>
+        <if test="endCityId != null">
+            and end_city_id = #{endCityId,jdbcType=INTEGER}
+        </if>
+    </sql>
+
+    <select id="selectPageByCondition" parameterType="com.company.test.dto.CityToCityDistanceDto" resultMap="BaseResultMap">
+        select
+        <include refid="sqlColumns"/>
+        from city_to_city_distance
+        where yn = 1
+        <include refid="selectByConditionnWhereSql"/>
+        order by update_time desc
+    </select>
+
+    <select id="selectCityToCityDistanceByMap" parameterType="java.util.HashMap" resultMap="BaseResultMap">
+        select
+        <include refid="sqlColumns"/>
+        from city_to_city_distance
+        where yn = 1
+            and start_prov_id = #{startProvId,jdbcType=INTEGER}
+            and start_city_id = #{startCityId,jdbcType=INTEGER}
+            and end_prov_id = #{endProvId,jdbcType=INTEGER}
+            and end_city_id = #{endCityId,jdbcType=INTEGER}
+        order by update_time desc limit 1
+    </select>
+
+    <insert id="insert" parameterType="com.company.test.dto.CityToCityDistanceDto">
+        insert into city_to_city_distance(id,start_prov_id,start_prov_name,start_city_id,start_city_name,
+              end_prov_id,end_prov_name,end_city_id,end_city_name,line_name,line_distance,operator_id,
+              operator_code,operator_name,create_time,update_time,yn)
+          values(#{id,jdbcType=BIGINT},#{startProvId,jdbcType=INTEGER},#{startProvName,jdbcType=VARCHAR},#{startCityId,jdbcType=INTEGER},#{startCityName,jdbcType=VARCHAR},
+            #{endProvId,jdbcType=INTEGER},#{endProvName,jdbcType=VARCHAR},#{endCityId,jdbcType=INTEGER},#{endCityName,jdbcType=VARCHAR},#{lineName,jdbcType=VARCHAR},
+            #{lineDistance,jdbcType=VARCHAR},#{operatorId,jdbcType=VARCHAR},#{operatorCode,jdbcType=VARCHAR},#{operatorName,jdbcType=VARCHAR},#{createTime,jdbcType=VARCHAR},
+            #{updateTime,jdbcType=VARCHAR},#{yn,jdbcType=INTEGER})
+    </insert>
+
+    <update id="delete" parameterType="java.lang.Long">
+      update city_to_city_distance set yn = -1 where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <select id="selectCityToCityDistanceById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="sqlColumns"/>
+        from city_to_city_distance
+        where yn = 1 and id = #{id,jdbcType=BIGINT}
+    </select>
+
+    <update id="updateDataById" parameterType="com.company.test.dto.CityToCityDistanceDto">
+        update city_to_city_distance set start_prov_id = #{startProvId,jdbcType=INTEGER},start_prov_name = #{startProvName,jdbcType=VARCHAR},
+            start_city_id=#{startCityId,jdbcType=INTEGER},start_city_name=#{startCityName,jdbcType=VARCHAR},end_prov_id=#{endProvId,jdbcType=INTEGER},
+            end_prov_name=#{endProvName,jdbcType=VARCHAR},end_city_id=#{endCityId,jdbcType=INTEGER},end_city_name=#{endCityName,jdbcType=VARCHAR},
+            line_name=#{lineName,jdbcType=VARCHAR},line_distance=#{lineDistance,jdbcType=VARCHAR},operator_id=#{operatorId,jdbcType=VARCHAR},
+            operator_code=#{operatorCode,jdbcType=VARCHAR},operator_name=#{operatorName,jdbcType=VARCHAR},update_time= #{updateTime,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <update id="deleteAllData">
+        update city_to_city_distance set yn = -1,update_time=now()
+    </update>
+
+</mapper>

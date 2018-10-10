@@ -1,0 +1,60 @@
+<input type="hidden" id="contextPath" value="#springUrl('')"/>
+<div class="main-content">
+    <div id="breadcrumbs" class="breadcrumbs">
+        <ul class="breadcrumb">
+            <li>
+                <i class="icon-home home-icon"></i>
+                <a href="#">首页</a>
+            </li>
+			<li>
+                <a href="#">系统错误</a>
+            </li>
+            <li class="active">未捕获的异常</li>
+        </ul>
+    </div>
+    <div class="page-content">
+		
+		<div class="row">
+			<div class="col-xs-12">
+				<!-- PAGE CONTENT BEGINS -->
+
+				<div class="error-container">
+					<div class="well">
+						<h1 class="grey lighter smaller">
+							<span class="blue bigger-125">
+								<i class="icon-random"></i>
+							</span>
+							系统运行异常！
+						</h1>
+
+						<hr>
+
+						<div class="space"></div>
+
+						<div>
+							#if($!exception)
+                                <div style="color:red">
+                                $exception.printStackTrace()
+                                Exception：  $!exception.message
+                                </div>
+                            #end
+						</div>
+
+						<hr>
+						<div class="space"></div>
+
+						<div class="center">
+							<a class="btn btn-grey" href="#" onclick="history.go(-1)">
+								<i class="icon-arrow-left"></i>
+								返回
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- PAGE CONTENT ENDS -->
+			</div><!-- /.col -->
+		</div>
+		
+	</div>
+</div>

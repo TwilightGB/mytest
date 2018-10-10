@@ -1,0 +1,255 @@
+html, body, div, span, iframe, h1, h2, h3, h4, h5, h6, input, p, blockquote, pre, a, address, big, cite, code, del, em, font, img, ins, small, strong, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+    padding: 0;
+    border: 0;
+    margin: 0; }
+
+ol, ul {
+    list-style: none; }
+
+:focus {
+    outline: 0; }
+
+a img {
+    border: 0; }
+
+img {
+    vertical-align: middle; }
+
+table {
+    empty-cells: show;
+}
+
+ins {
+    text-decoration: none; }
+
+del {
+    text-decoration: line-through; }
+
+em {
+    font-style: normal; }
+
+button::-moz-focus-inner, input[type=reset]::-moz-focus-inner, input[type=button]::-moz-focus-inner, input[type=submit]::-moz-focus-inner, input[type=file] > input[type=button]::-moz-focus-inner {
+    border: 0;
+    padding: 0; }
+
+body {
+    font-size: 12px; }
+
+.hide {
+    display: none; }
+
+.clr {
+    display: block;
+    content: '\20';
+    clear: both; }
+
+.fl {
+    float: left; }
+
+.fr {
+    float: right; }
+
+.t-l {
+    text-align: left; }
+
+.t-r {
+    text-align: right; }
+
+.t-c {
+    text-align: center; }
+
+.mr10 {
+    margin-right: 10px; }
+
+/*body*/
+body {
+    color: #fff;
+    background: #1f1f27;
+    font-family: "simhei"; }
+
+html, body, div, span, iframe, h1, h2, h3, h4, h5, h6, input, p, blockquote, pre, a, address, big, cite, code, del, em, font, img, ins, small, strong, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+    padding: 0;
+    border: 0;
+    margin: 0; }
+
+ol, ul {
+    list-style: none; }
+
+:focus {
+    outline: 0; }
+
+a img {
+    border: 0; }
+
+img {
+    vertical-align: middle; }
+
+table {
+    empty-cells: show; }
+
+ins {
+    text-decoration: none; }
+
+del {
+    text-decoration: line-through; }
+
+em {
+    font-style: normal; }
+
+button::-moz-focus-inner, input[type=reset]::-moz-focus-inner, input[type=button]::-moz-focus-inner, input[type=submit]::-moz-focus-inner, input[type=file] > input[type=button]::-moz-focus-inner {
+    border: 0;
+    padding: 0; }
+
+
+
+.hide {
+    display: none; }
+
+.clr {
+    display: block;
+    content: '\20';
+    clear: both; }
+
+.fl {
+    float: left; }
+
+.fr {
+    float: right; }
+
+.t-l {
+    text-align: left; }
+
+.t-r {
+    text-align: right; }
+
+.t-c {
+    text-align: center; }
+
+.mr10 {
+    margin-right: 10px; }
+
+
+html, body {
+    height: 1080px;
+    width: 1920px;
+    overflow: hidden;
+}
+
+
+.date {
+    width: 1206px;
+    margin: 0 auto;
+    height: 160px;
+    padding-top: 20px;
+    font-size: 30px;
+    line-height: 120px; }
+.date div {
+    float: left; }
+.date .time {
+    margin: 0 105px;
+    font-size: 72px;
+    font-family: Arial; }
+.date .time span {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    border-radius: 5px;
+    background: #33333b;
+    line-height: 120px;
+    text-align: center;
+    margin: 0 5px;
+    position: relative; }
+.date .time span b {
+    position: relative;
+    z-index: 1; }
+.date .time span:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #1f1f27;
+    position: absolute;
+    left: 0;
+    top: 59px;
+    z-index: 0; }
+
+.grid-wrap {
+    margin: 0 20px;
+    height: 880px;
+    overflow: hidden; }
+.grid-wrap .grid {
+    width: 100%;
+    border-collapse: collapse; }
+.grid-wrap .grid th, .grid-wrap .grid td {
+    padding: 0 0 0 0px; }
+.grid-wrap .grid th {
+    height: 100px;
+    text-align: left;
+    background: #1f1f1f;
+    font-size: 36px;
+    font-weight: normal; }
+.grid-wrap .grid .slide_mask .slide_holder .scroll-part .scroll-con .grid td {
+    height: 64px;
+    border-top: 1px solid #1f1f27;
+    background: #3b3b44;
+    font-size: 28px; }
+.grid-wrap .grid td {
+    height: 64px;
+    border-top: 1px solid #1f1f27;
+    background: #3b3b44;
+    font-size: 28px; }
+.grid-wrap .grid td .progress {
+    width: 330px;
+    height: 24px;
+    line-height: 24px;}
+.grid-wrap .grid td .progress .bar {
+    width: 264px;
+    height: 4px;
+    padding: 10px;
+    background: #191921;
+    float: left; }
+.grid-wrap .grid td .progress .bar b {
+    display: block;
+    height: 4px;
+    background: #9f9fb5; }
+.grid-wrap .grid td .progress .rate {
+    float:left;
+    width: 60px; }
+.grid-wrap .grid td .carNo {
+    width: 140px;
+    height: 64px;
+    line-height: 64px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+.grid-wrap .grid td .place {
+    width: 230px;
+    height: 64px;
+    line-height: 64px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+.grid-wrap .grid td .datetime {
+    width: 260px;
+    height: 64px;
+    line-height: 64px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+.grid-wrap .grid td .mile {
+    width: 110px;
+    height: 64px;
+    line-height: 64px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+.grid-wrap .grid .highlight td {
+    color: #f96a6a;
+    background: #2b2b33;}
+.grid-wrap .grid .progress {
+    background: #3b3b44; }
+.grid-wrap .grid .highlight .progress .bar {
+    color: #f96a6a; }
+.grid-wrap .grid .highlight .progress .bar b {
+    background: #f96a6a; }
+

@@ -1,0 +1,5 @@
+<div class="alert alert-danger" style="margin: 20px" id="sucMsg">您遇到了错误，错误提示：$!{message}</div>
+<button type="button" class="btn btn-danger btn-large" onclick="history.go(-1)" style="margin-left: 20px">
+    <i class="icon-reply icon-on-right bigger-110"></i>
+    点击返回
+</button>

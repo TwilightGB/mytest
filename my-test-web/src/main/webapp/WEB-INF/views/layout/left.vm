@@ -1,0 +1,63 @@
+#set($layout = "layout/empty.vm")
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>X系统</title>
+    <link href="#springUrl('/static/css/erpbase.css')" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="#springUrl('/static/js/plugins/jquery.min.js')"></script>
+    <style type="text/css">
+        html {
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body id="leftframe">
+<div id="lsidebar">
+    <dl>
+
+
+    ##        <dt><a href="#" class="curr" >DEMO</a></dt>
+    ##        <dt><a href="javascript:void(0);" class="curr">Bootstrap示例</a></dt>
+    ##        <dd><a href="#springUrl('/demo/list')" target="mainFrame">页面示例</a></dd>
+
+    </dl>
+</div>
+<div id="control" class="control" jQuery1328083232241="11"></div>
+
+<script type="text/javascript">
+    $('dd').hide();
+    showMenu($("#defaultMenuBar"));
+    $("#lsidebar dt a").bind("click", function () {
+        hideMenu($("#lsidebar .curr"));
+        showMenu($(this));
+    });
+    function showMenu(obj) {
+        obj.addClass('curr');
+        obj.parent().nextUntil('dt').slideDown('fast');
+    }
+    function hideMenu(obj) {
+        obj.removeClass('curr');
+        obj.parent().nextUntil('dt').slideUp('fast');
+    }
+
+    $("#control").bind("click", function () {
+        parent.document.getElementsByTagName('frameset')[1].cols = (parent.document.getElementsByTagName('frameset')[1].cols == '10,*') ? '169,*' : '10,*';
+        document.getElementById('lsidebar').style.display = (document.getElementById('lsidebar').style.display == 'none') ? '' : 'none';
+        document.getElementById('control').className = (document.getElementById('control').className == 'control') ? 'control switch' : 'control';
+    });
+
+    function hiddenLeft() {
+        var url = window.location.toString().match(/module=(\d+)/)[1];
+        if (url == '6') {
+            parent.document.getElementsByTagName('frameset')[1].cols = (parent.document.getElementsByTagName('frameset')[1].cols == '10,*') ? '169,*' : '10,*';
+            document.getElementById('lsidebar').style.display = (document.getElementById('lsidebar').style.display == 'none') ? '' : 'none';
+            document.getElementById('control').className = (document.getElementById('control').className == 'control') ? 'control switch' : 'control';
+        }
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+@import url(common.css);
+body{ overflow:hidden;}
+iframe{ width:100%; height:100%;}
+
+.e_leftMenu{ position:relative; width:220px; height:100%; background:#003a5f; overflow-y:auto; overflow-x:hidden;}
+.e_leftMenu .e_control{ position:absolute; top:50%; right:-12px; width:12px; height:45px; padding:39px 0 0 2px; margin-top:-42px; background:url(../images/button_leftMenu.png) no-repeat; cursor:pointer;}
+.e_leftMenu .e_control:hover{ background:url(../images/button_leftMenu_hover.png) no-repeat;}
+.e_leftMenu .e_control:hover i.gArrowLSS{ background-position:0 -91px;}
+.e_leftMenu .e_control:hover i.gArrowRSS{ background-position:-7px -91px;}
+.e_leftMenu .e_title{ overflow:hidden; height:54px; line-height:52px; border-bottom:1px solid #24344b; box-shadow:0 1px 0 #364e73; font-size:18px; color:#b4bfd0; text-align:center;}
+.e_leftMenu .e_title img,.e_leftMenu .e_title span{ display:inline-block; vertical-align:middle;}
+.e_leftMenu .e_title span{ margin-left:5px;}
+.e_leftMenu .e_menu .e_box{ border-bottom:1px solid #3c506e;}
+.e_leftMenu .e_menu .e_box h2{ height:40px; line-height:38px; padding:0 20px; color:#b4bfd0; cursor:pointer;}
+.e_leftMenu .e_menu .e_box h2 i{ display:block; float:right; width:11px; height:11px; margin-top:14px; background:url(../images/icon_main.png) no-repeat 0 -62px;}
+.e_leftMenu .e_menu .e_box ul{ background:#04426a;}
+.e_leftMenu .e_menu .e_box ul li{ height:40px;}
+.e_leftMenu .e_menu .e_box ul li:hover{ background:#0e5888;}
+.e_leftMenu .e_menu .e_box ul li a{ display:block; line-height:38px; padding-left:38px; font-size:12px; color:#b4bfd0;}
+.e_leftMenu .e_menu .e_box ul li.now{ background:#47a8e7;}
+.e_leftMenu .e_menu .e_box ul li.now a{ color:#fff; font-weight:700;}
+.e_leftMenu .e_menu .e_open h2{ color:#fff; font-weight:700;}
+.e_leftMenu .e_menu .e_open h2 i{ background-position:-11px -62px;}
+
+.e_rightMain{ overflow:hidden;}

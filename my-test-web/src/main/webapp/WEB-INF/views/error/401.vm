@@ -1,0 +1,50 @@
+<input type="hidden" id="contextPath" value="#springUrl('')"/>
+<div class="main-content">
+    <div id="breadcrumbs" class="breadcrumbs">
+        <ul class="breadcrumb">
+            <li>
+                <i class="icon-home home-icon"></i>
+                <a href="#">首页</a>
+            </li>
+			<li>
+                <a href="#">请求错误</a>
+            </li>
+            <li class="active">401</li>
+        </ul>
+    </div>
+    <div class="page-content">
+		<div class="row">
+			<div class="col-xs-12">
+				<!-- PAGE CONTENT BEGINS -->
+				<div class="error-container">
+					<div class="well">
+						<h1 class="grey lighter smaller">
+							<span class="blue bigger-125">
+								<i class="icon-random"></i>
+								401
+							</span>
+							访问被拒绝，您没有足够的权限！
+						</h1>
+						<hr>
+						<div class="space"></div>
+						<div>
+							<h4 class="lighter smaller">需要有以下权限：</h4>
+							<ul class="list-unstyled spaced inline bigger-110 margin-15">
+								<li><i class="icon-hand-right blue"></i>$!{request.getAttribute("javax.servlet.error.message")}</li>
+							</ul>
+						</div>
+						<hr>
+						<div class="space"></div>
+						<div class="center">
+							<a class="btn btn-grey" href="#" onclick="history.go(-1)">
+								<i class="icon-arrow-left"></i>
+								返回
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- PAGE CONTENT ENDS -->
+			</div><!-- /.col -->
+		</div>
+	</div>
+</div>

@@ -1,0 +1,122 @@
+td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.status {
+    border: none;
+    border-bottom: none;
+}
+
+.status-info {
+    color: black;
+}
+
+.status-key-info {
+    color: red;
+}
+
+.button-ico {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-bottom, .btn-up, .btn-down, .btn-top, .btn-cacul, .btn-save {
+    background-repeat: round;
+    background-size: cover;
+    background-color: transparent;
+}
+
+.btn-bottom {
+    background-image: url(/static/images/bottom.png);
+}
+
+.btn-up {
+    background-image: url(/static/images/up.png);
+}
+
+.btn-down {
+    background-image: url(/static/images/down.png);
+}
+
+.btn-top {
+    background-image: url(/static/images/top.png);
+}
+
+.btn-cacul {
+    background-image: url(/static/images/cacul.png);
+}
+
+.btn-save {
+    background-image: url(/static/images/save.png);
+}
+
+.tr-even{
+    background: #1b7cd6;
+}
+
+.tr-odd{
+    background: #f8fafc;
+}
+
+#scheduleview {
+    overflow: scroll;
+}
+
+#mainView {
+    height: 100%;
+}
+
+#map-container {
+    border-width: thin;
+    border-style: solid;
+    margin-right: 25%;
+}
+
+#map-container {
+    width: 75%;
+    height: 750px;
+}
+
+#rightView {
+    width: 25%;
+    float: right;
+}
+
+#dataContainer {
+    height: 80%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+#policyPanel {
+    height: 20%;
+    margin-top: 5px;
+    padding: 25px 0;
+    text-align: center;
+    overflow: scroll;
+    overflow-x: hidden;
+    border-top: thin solid;
+}
+
+#bottomStatusView {
+    height: 10%;
+    clear: both;
+}
+
+#policyPanel > span {
+    margin: 0px 10px;
+}
+
+#policyPanel > button {
+    margin: 0px 10px;
+}
+
+td {
+    width: 50px;
+}
+html,body {
+    height: 100%;
+}
+
+
