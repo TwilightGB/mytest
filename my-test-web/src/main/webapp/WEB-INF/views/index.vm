@@ -997,6 +997,6 @@
 <script src="#springUrl('/static/js/vendors/daterangepicker.js')"type="text/javascript"></script>
 <script src="#springUrl('/static/js/vendors/custom.min.js')"type="text/javascript"></script>
 
-<script src="#springUrl('/static/js/common/heart.js?v=20181001')" type="text/javascript"></script>
+    <script src="#springUrl('/static/js/common/heart.js?v=20181001')" type="text/javascript"></script>
 </body>
 </html>
